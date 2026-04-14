@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f1f3f6;
+}
+
+/* HEADER */
+header {
+  background: #131921;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-box {
+  flex: 1;
+  margin: 0 15px;
+  display: flex;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+}
+
+.search-box button {
+  background: #febd69;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.cart {
+  cursor: pointer;
+}
+
+/* CATEGORY NAV */
+.categories {
+  display: flex;
+  overflow-x: auto;
+  background: #232f3e;
+}
+
+.categories button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.categories button:hover {
+  background: #37475a;
+}
+
+/* BANNER */
+.banner {
+  background: url("https://images.unsplash.com/photo-1607083206968-13611e3d76db") center/cover no-repeat;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.banner h2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* FILTER BAR */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.filters select {
+  padding: 6px;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #b12704;
+}
+
+.rating {
+  color: #ffa41c;
+}
+
+/* BUTTON */
+.card button {
+  width: 100%;
+  padding: 8px;
+  background: #ffd814;
+  border: none;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #f7ca00;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .banner {
+    height: 120px;
+  }
+
+  .search-box {
+    margin: 0 5px;
+  }
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEasy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ShopEasy</div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search products...">
+    <button>🔍</button>
+  </div>
+
+  <div class="cart">🛒</div>
+</header>
+
+<div class="categories">
+  <button onclick="filterCategory('All')">All</button>
+  <button onclick="filterCategory('Electronics')">Electronics</button>
+  <button onclick="filterCategory('Fashion')">Fashion</button>
+  <button onclick="filterCategory('Home')">Home</button>
+  <button onclick="filterCategory('Books')">Books</button>
+</div>
+
+<div class="banner">
+  <h2>🔥 Mega Sale - Up to 50% Off</h2>
+</div>
+
+<div class="filters">
+  <select id="priceFilter">
+    <option value="all">All Prices</option>
+    <option value="low">Below ₹500</option>
+    <option value="mid">₹500 - ₹2000</option>
+    <option value="high">Above ₹2000</option>
+  </select>
+
+  <select id="ratingFilter">
+    <option value="all">All Ratings</option>
+    <option value="4">4★ & above</option>
+    <option value="3">3★ & above</option>
+  </select>
+
+  <select id="sort">
+    <option value="default">Sort</option>
+    <option value="lowHigh">Price Low → High</option>
+    <option value="highLow">Price High → Low</option>
+    <option value="rating">Rating High → Low</option>
+  </select>
+</div>
+
+<h2>Place Order</h2>
+
+<form id="orderForm">
+  <input type="text" id="productName" placeholder="Product Name" required><br><br>
+  <input type="number" id="price" placeholder="Price" required><br><br>
+  <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+  <input type="text" id="customerName" placeholder="Customer Name" required><br><br>
+
+  <button type="submit">Place Order</button>
+</form>
+
+<div id="products"></div>
+
+<div id="cart-box" style="display:none; position:absolute; right:10px; top:50px; background:white; border:1px solid black; padding:10px;">
+    <h3>Cart Items</h3>
+    <ul id="cart-items"></ul>
+</div>
+
+<div onclick="toggleCart()">
+    🛒 Cart (<span id="cart-count">0</span>)
+</div>
+
+
+
+<div class="products" id="productList"></div>
+<script src="script.js"></script>
+</body>
+</html>
